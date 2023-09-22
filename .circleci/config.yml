@@ -17,6 +17,6 @@ jobs:
           oath: test-results
           
 workflows:
-  testing_triangles
+  testing_triangles:
     jobs:
       - build-and-test
