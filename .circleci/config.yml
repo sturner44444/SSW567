@@ -13,10 +13,14 @@ jobs:
           command: |
             pip install pytest
             pytest --junitxml=test-results/junit.xml TestTriangle.py
+            pytest --junitxml=test-results/junit.xml hw4atest.py
       - store_test_results:
           path: test-results
           
 workflows:
   testing_triangles:
+    jobs:
+      - build-and-test
+  testing_hw4a:
     jobs:
       - build-and-test
