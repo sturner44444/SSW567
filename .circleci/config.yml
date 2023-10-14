@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           command: |
-            pip install pytest -s
+            pip install pytest
             pip install requests
             pytest --junitxml=test-results/junit.xml HW-02a/TestTriangle.py
             pytest --junitxml=test-results/junit.xml GitHubApi567-hw4a/hw4atest.py
