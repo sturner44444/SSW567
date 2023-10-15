@@ -1,16 +1,12 @@
 import requests
 import json
 
-ID = input("Enter GitHub User ID: ")
-print(ID)
-
-#determine if username provided
 def validID(ID):
     if ID != None:
         return True
     else:
         return False
-
+  
 #get the names of repositories for the user
 def getrepos(ID):
     url = f"https://api.github.com/users/{ID}/repos"
@@ -27,10 +23,12 @@ def getrepos(ID):
         yield n
 
 #function call and decision
-if validID(ID):
-    getrepos(ID)
-    print(list(getrepos(ID)))
-else:
-    print("Invalid GitHub username")
+if __name__=='__main__':
+    ID = input("Enter GitHub User ID: ")
+    if validID(ID):
+        getrepos(ID)
+        print(list(getrepos(ID)))
+    else:
+        print("Invalid GitHub username")
 
 
